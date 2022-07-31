@@ -1,0 +1,29 @@
+[
+    {
+        "text": "在重新计票开始以后，忧虑的布什竞选阵营官员，星期六飞往佛州监督重新计票过程，并且注视法律纠纷的发展事态",
+        "events": [
+            {
+                "trigger": {
+                    "text": "飞往",
+                    "start": 25,
+                    "end": 27
+                },
+                "arguments": [
+                    {
+                        "role": "Destination",
+                        "text": "佛州",
+                        "start": 27,
+                        "end": 29
+                    },
+                    {
+                        "role": "Time",
+                        "text": "星期六",
+                        "start": 22,
+                        "end": 25
+                    }
+                ],
+                "event_type": "Movement:Transport"
+            }
+        ]
+    }
+]
