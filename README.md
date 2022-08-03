@@ -23,8 +23,6 @@ paperCode
 │   │   └── pos.pkl                         # 经LTP工具处理得到的事件文本对应的词性标注信息
 │   └── ACE                                  
 │
-├── checkpoint                              # 存放训练的模型
-│
 ├── ERNIE_pretrain                          # 存放百度ERNIE预训练模型
 │
 ├── train.py                                # 模型训练  python train.py
