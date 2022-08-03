@@ -15,9 +15,9 @@ class param():
     pos_path = os.path.join(base_path, 'data/DuEE/pos.pkl')
     model_save_path = os.path.join(base_path, 'checkpoint')
     log_dir = os.path.join(base_path, 'checkpoint/train.log')
-    pre_model = "/home/myw/pretrainmodel/ERNIE"
+    pre_model = "ERNIE_pretrain"
     tokenizer = transformers.BertTokenizer.from_pretrained(pre_model)
-    device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
     seed = 104
     max_seq_len = 170
@@ -44,7 +44,7 @@ class param():
     max_grad_norm = 1.0
 
 
-# ���Ա�ǩ
+# ´ÊÐÔ±êÇ©
 pos2id = {'B-nl': 1, 'B-a': 2, 'B-o': 3, 'B-nd': 4, 'I-p': 5, 'B-d': 6, 'B-q': 7, 'I-a': 8, 'B-wp': 9, 'I-q': 10,
 'I-c': 11, 'B-m': 12, 'I-o': 13, 'B-v': 14, 'B-b': 15, 'B-nh': 16, 'B-j': 17, 'I-u': 18, 'I-j': 19,
 'I-i': 20,'B-c': 21, 'B-p': 22, 'I-m': 23, 'B-ns': 24, 'I-ns': 25, 'B-i': 26, 'B-z': 27, 'I-v': 28, 'B-n': 29,
