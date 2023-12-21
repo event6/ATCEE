@@ -17,6 +17,7 @@ class BatchManager(object):
         self.batch_size = batch_size
         self.batch_data = self.gen_batch(data)
         self.len_data = len(self.batch_data)
+        self.padding_length = 0
 
     def gen_batch(self, data):
         """
@@ -82,9 +83,17 @@ class BatchManager(object):
     def sequence_padding(self, inputs, padding_num, isToken=False):
         """将序列padding到同一长度
         """
-        length = max([len(x) for x in inputs])
         res = []
-        for x in inputs:
-            x = x + [padding_num] * (length - len(x))
-            res.append(x)
+        if isToken: 
+            self.padding_length = max([len(x) for x in inputs])
+            for x in inputs:
+                x = x + [padding_num] * (self.padding_length - len(x))
+                res.append(x)
+        else:
+            for x in inputs:
+                if len(x) >= self.padding_length:
+                    x = x[:self.padding_length-1]
+                else:
+                    x = x + [padding_num] * (self.padding_length-1 - len(x))
+                res.append(x)
         return res
